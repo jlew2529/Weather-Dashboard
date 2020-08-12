@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3 city-search">
+                <h3>Search for a City</h3>
+                <form id="cityForm">
+                    <input type="text" id="cityname" style="border-radius: .25rem;">
+                    <input type="submit" style="width: 70px;">
+                </form>
+                <ul class="nav flex-column" id="search">
+                    <li class="pastSearch">Past Searches</li>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </ul>
+                <button style="width: 70px;">Clear</button>
+            </div>
+
+            <div class="weather">
+                <div class="container">
+                    <div class="col-9 conditions">
+                        <h3>Current Weather Conditions</h3>
+                        <div id="city"></div>
+                        <div id="date"></div>
+                        <div id="description"></div>
+                        <div id="icon"></div>
+                        <div id="temperature"></div>
+                        <div id="humidity"></div>
+                        <div id="windSpeed"></div>
+                    </div>
+                </div>
+
+                <div class="container-forecast">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="firstDay">
+                            <p class="date"></p>
+                            <p class="icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="secondDay">
+                            <p class="date"></p>
+                            <p class="icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="thirdDay">
+                            <p class="date"></p>
+                            <p class="icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="fourthDay">
+                            <p class="date"></p>
+                            <p class="icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="fifthDay">
+                            <p class="date"></p>
+                            <p class="icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js">
+    
+         /* adding for loop to get and store local storage */
+         var cityName = document.getElementById("cityname");
+        
+    
+        for (var i = 0; i  < localStorage.length; i++){
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+
+            localStorOutput.innerHTML += `${key}: ${value}<br />`;
+        }
+
+    </script>
+</body>
+</html>

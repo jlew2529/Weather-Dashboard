@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ramabhadra', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Ramabhadra', sans-serif;
+}
+
+.city-search {
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border:2px solid darkgray;
+}
+
+.pastSearch {
+    font-size: 1.75rem;
+    margin-top: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input {
+    border: 1px solid darkgray;
+}
+
+.col-9 {
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid darkgray;
+}
+
+.container-forecast {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    display: inline-block;
+}
