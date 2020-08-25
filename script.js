@@ -7,7 +7,7 @@ $("#cityForm").submit(function(event){
 
 /* Add api to call weather by city */
 function getCurrentWeather(city){
-    $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=c8314d38e6d7113010ca48868ea8b8dd", function(data){
+    $.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=c8314d38e6d7113010ca48868ea8b8dd", function(data){
       console.log(data);
 
         $("#city").html(data.main.name);
@@ -18,14 +18,14 @@ function getCurrentWeather(city){
         $("#windSpeed").html("Wind Speed: " + data.wind.speed + " mph");
     });
     /* Add api to call 5-day forecast */
-    $.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid=c8314d38e6d7113010ca48868ea8b8dd", function(data){
+    $.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid=c8314d38e6d7113010ca48868ea8b8dd", function(data){
     console.log(data);
 
 /* Added variables for moment .js, and api to display each day of 5-day forecast date, icon, temp, and humidity */
 /* 1 */
   var firstDay = moment().format("M/D/YYYY");
   var firstDayIcon = data.list[0].weather[0].icon;
-  var firstDayImage = "http://openweathermap.org/img/wn/" + firstDayIcon + ".png";
+  var firstDayImage = "https://openweathermap.org/img/wn/" + firstDayIcon + ".png";
   var dayOneImageSrc = $("<img>").attr("src", firstDayImage);
   var firstDayTemp = data.list[0].main.temp + " °F";
   var firstDayTempFar = (firstDayTemp - 273.15) * 1.8 + 32;
@@ -46,7 +46,7 @@ function getCurrentWeather(city){
 /* 2 */
   var secondDay = moment().add(1, "days").format("M/D/YYYY");
   var secondDayIcon = data.list[8].weather[0].icon;
-  var secondDayImage = "http://openweathermap.org/img/wn/" + secondDayIcon + ".png";
+  var secondDayImage = "https://openweathermap.org/img/wn/" + secondDayIcon + ".png";
   var secondDayImageSrc = $("<img>").attr("src", secondDayImage);
   var secondDayTemp = data.list[8].main.temp + " °F";
   var secondDayTempFar = (secondDayTemp - 273.15) * 1.8 + 32;
@@ -67,7 +67,7 @@ function getCurrentWeather(city){
 /* 3 */
   var thirdDay = moment().add(2, "days").format("M/D/YYYY");
   var thirdDayIcon = data.list[16].weather[0].icon;
-  var thirdDayImage = "http://openweathermap.org/img/wn/" + thirdDayIcon + ".png";
+  var thirdDayImage = "https://openweathermap.org/img/wn/" + thirdDayIcon + ".png";
   var thirdDayImageSrc = $("<img>").attr("src", thirdDayImage);
   var thirdDayTemp = data.list[16].main.temp + " °F";
   var thirdDayTempFar = (thirdDayTemp - 273.15) * 1.8 + 32;
@@ -88,7 +88,7 @@ function getCurrentWeather(city){
 /* 4 */
   var fourthDay = moment().add(3, "days").format("M/D/YYYY");
   var fourthDayIcon = data.list[24].weather[0].icon;
-  var fourthDayImage = "http://openweathermap.org/img/wn/" + fourthDayIcon + ".png";
+  var fourthDayImage = "https://openweathermap.org/img/wn/" + fourthDayIcon + ".png";
   var fourthDayImageSrc = $("<img>").attr("src", fourthDayImage);
   var fourthDayTemp = data.list[24].main.temp + " °F";
   var fourthDayTempFar = (fourthDayTemp - 273.15) * 1.8 + 32;
@@ -109,7 +109,7 @@ function getCurrentWeather(city){
 /* 5 */
   var fifthDay = moment().add(4, "days").format("M/D/YYYY");
   var fifthDayIcon = data.list[32].weather[0].icon;
-  var fifthDayImage = "http://openweathermap.org/img/wn/" + fifthDayIcon + ".png";
+  var fifthDayImage = "https://openweathermap.org/img/wn/" + fifthDayIcon + ".png";
   var fifthDayImageSrc = $("<img>").attr("src", fifthDayImage);
   var fifthDayTemp = data.list[32].main.temp + " °F";
   var fifthDayTempFar = (fifthDayTemp - 273.15) * 1.8 + 32;
